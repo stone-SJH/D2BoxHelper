@@ -1,11 +1,11 @@
 # D2BoxHelper
 
-Diablo2大箱子整理
+Diablo2 Helper
 测试版本为V1.13C+plugy10.0
 
 # Feature
 
-0.整理排序
+0.共享储物箱按序整理
 
 ...more
 
