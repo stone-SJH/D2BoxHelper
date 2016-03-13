@@ -8,7 +8,7 @@
 #include "Config.h"
 
 //backup file position
-char CONFIG_BAKPATH[1024] = "d:\\d2_backup";
+char CONFIG_BAKPATH[1024] = "D:\\d2_sssback";//default back path
 
 char * excel_misc;
 long excel_misc_size;
@@ -124,10 +124,10 @@ bool LoadItemType()
 	ItemTypesCount = 0;
 	ItemTypes = (ItemType *)malloc(sizeof(ItemType)*ItemTypesLength);
 
-	char * buffer = ReadAllFile("itemtype.cfg", "r", &lSize);
+	char * buffer = ReadAllFile("config\\itemtype.cfg", "r", &lSize);
 	if (buffer == NULL)
 	{
-		MessageBox(0, _T("failed to load itemtype.cfg"), _T("Error"), 0);
+		MessageBox(0, _T("failed to load config\\itemtype.cfg"), _T("Error"), 0);
 		return false;
 	}
 
@@ -199,10 +199,10 @@ bool LoadConfig()
 	ConfigsCount = 0;
 	Configs = (Config *)malloc(sizeof(Config)*ConfigsLength);
 
-	char * buffer = ReadAllFile("config.cfg", "r", &lSize);
+	char * buffer = ReadAllFile("config\\config.cfg", "r", &lSize);
 	if (buffer == NULL)
 	{
-		MessageBox(0, _T("failed to load config.cfg"), _T("Error"), 0);
+		MessageBox(0, _T("failed to load config\\config.cfg"), _T("Error"), 0);
 		return false;
 	}
 
@@ -241,7 +241,7 @@ bool LoadConfig()
 
 					if (split_Col_Index == 0)
 					{
-						if (strcmp(col, "bakpath") == 0)
+						if (strcmp(col, "backpath") == 0)
 							bBackPath = true;
 						else
 							strcpy(nowConfig->type, col);

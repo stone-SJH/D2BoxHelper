@@ -107,7 +107,9 @@ BOOL CBoxToolDlg::OnInitDialog()
 		exit(0);
 	}
 
-	CString sSM = _T("select \"_LOD_SharedStashSave.sss\" and click \"clean up\" button");
+	CString sSM = _T("Select \"_LOD_SharedStashSave.sss\" and click \"clean up\" button.\r\n");
+	sSM += ("The backup sss file will be stored in your \"D:\\d2_backsss\" directory.\r\n");
+	sSM += ("----v1.0 By Stone.");
 	GetDlgItem(txtSM)->SetWindowTextW(sSM);
 
 
@@ -255,3 +257,4 @@ BOOL CBoxToolDlg::DirectoryExist(CString Path)
 	FindClose(hFind);
 	return ret;
 }
+
